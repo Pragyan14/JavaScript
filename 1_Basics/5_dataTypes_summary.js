@@ -18,6 +18,9 @@ console.log(typeof(e));         // undefined
 let f = Symbol("patidar")
 console.log(typeof(f));         // symbol
 
+let n = NaN
+console.log(typeof(n))          // number
+
 
 
 /*---------- NON-PREMTIVE DATATYPE ----------*/

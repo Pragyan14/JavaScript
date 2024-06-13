@@ -1,6 +1,6 @@
 const id = 1233
-var name = "pragyan"
-let surname = "patidar"
+var name = "pragyan"        // Global scope, can we redefined  (Avoid using var)
+let surname = "patidar"     // Block scope
 // var name2;
 let name3;
 email = "123@gmail.com"
