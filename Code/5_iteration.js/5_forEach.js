@@ -12,10 +12,10 @@ function printMe(item) {
 
 lan.forEach(printMe);
 
-// using forEAch we can also get index number and full array
+// using forEach we can also get index number and full array
 
 lan.forEach((items, index, arr) => {
-  //   console.log(items, index, arr);
+  console.log(items, index, arr);
 });
 
 let user = [
