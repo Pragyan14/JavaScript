@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event | Learning</title>
+  </head>
+  <body>
+    <div class="contanier">
+      <h1>Event Handling</h1>
+      <ul id="numbers">
+        <li id="one">One</li>
+        <li id="two">Two</li>
+        <li id="three">Three</li>
+        <li id="four">Four</li>
+        <li id="five">Five</li>
+      </ul>
+    </div>
+    <script>
+      // Event Propogation
+      document.getElementById("numbers").addEventListener(
+        "click",
+        (e) => {
+          console.log("clicked ul");
+          //   e.target.remove();
+        },
+        true
+      );
+      document.getElementById("one").addEventListener(
+        "click",
+        (e) => {
+          console.log("clicked li");
+        },
+        true
+      );
+    </script>
+  </body>
+</html>

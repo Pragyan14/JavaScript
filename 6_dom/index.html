@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Learning</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: #fff;
+      }
+      .diff {
+        font-size: 24px;
+        color: orangered;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1 id="title" class="heading">DOM Manipulation</h1>
+      <p class="content">
+        Saepe impedit rerum odio deserunt. Harum eligendi illo nobis, odit ab
+        veniam.
+      </p>
+      <ul class="number">
+        <li class="listItem">One</li>
+      </ul>
+      <div id="parent">
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednsaday</div>
+        <div>Thursday</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let parent = document.getElementById("parent");
+    // console.log(parent.children.length);
+    for (let i = 0; i < parent.children.length; i++) {
+      // console.log(parent.children[i].innerHTML);
+    }
+    function addElement(text) {
+      const li = document.createElement("li");
+      li.innerHTML = `${text}`;
+      document.querySelector(".number").appendChild(li);
+    }
+    addElement("Two");
+
+    // optimized way to insert elements
+
+    function optInsert(text) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(`${text}`));
+      document.querySelector(".number").appendChild(li);
+    }
+
+    optInsert("Three");
+    optInsert("Four");
+
+    const list = document.querySelectorAll(".number li");
+    console.log(list.length);
+    for (let i = 0; i < list.length; i++) {
+      list[i].className = "diff";
+    }
+
+    // remove element
+
+    const deleteElement = document.querySelector("li:last-child");
+    deleteElement.remove();
+  </script>
+</html>
