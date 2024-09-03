@@ -9,30 +9,45 @@
     <div class="contanier">
       <h1>Event Handling</h1>
       <ul id="numbers">
-        <li id="one">One</li>
-        <li id="two">Two</li>
-        <li id="three">Three</li>
-        <li id="four">Four</li>
-        <li id="five">Five</li>
+        <li id="one"><p>One</p></li>
+        <li id="two"><p>Two</p></li>
+        <li id="three"><p>Three</p></li>
+        <li id="four"><p>Four</p></li>
+        <li id="five"><p>Five</p></li>
+        <li id="google"> <a href="https://www.google.com">google</a> </li>
       </ul>
     </div>
     <script>
-      // Event Propogation
-      document.getElementById("numbers").addEventListener(
-        "click",
-        (e) => {
-          console.log("clicked ul");
-          //   e.target.remove();
-        },
-        true
-      );
-      document.getElementById("one").addEventListener(
-        "click",
-        (e) => {
-          console.log("clicked li");
-        },
-        true
-      );
+      // document.getElementById("one").onclick = function(){
+      //   alert("Clicked");
+      // }
+
+      // document.getElementById("one").addEventListener('click',function (){
+      //   alert("Clicked again");
+      // },false)
+
+      // document.getElementById("one").addEventListener('click',function(e){
+      //   console.log("one clicked");
+      //   e.stopPropagation();
+      // },false);
+      //
+      // document.getElementById("numbers").addEventListener('click',function(e){
+      //   console.log("numbers clicked");
+      //
+      // },false)
+      //
+      // document.getElementById("google").addEventListener('click',function(e){
+      //   e.preventDefault();   // prevent default (prevent redirect in anchor tag)
+      // },false)
+
+      document.querySelector("#numbers").addEventListener('click',function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'P'){
+        let removeLi = e.target.parentNode;
+        removeLi.remove();
+        }
+      })
+
     </script>
   </body>
 </html>
