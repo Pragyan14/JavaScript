@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event</title>
+</head>
+<body>
+    <h1>Pragyan</h1>
+    <button id="stop">Click</button>
+    <script>
+        const sayPragyan = function(){
+            console.log("Pragyan");
+        }
+        const changeText = function(){
+            document.querySelector('h1').innerHTML = "Pragyan is best";
+        }
+        const changeMe = setTimeout(changeText,3000);
+
+        document.querySelector("#stop").addEventListener('click',function(){
+            clearTimeout(changeMe);
+            console.log("Stopped");
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event</title>
+</head>
+<body>
+    <h1>Pragyan</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+    <script>
+        const sayName = function(name){
+            console.log(name);
+        }
+        let stopMe;
+        document.querySelector("#start").addEventListener('click',function(){
+            stopMe = setInterval(sayName,1000,"appu");
+        })
+        document.querySelector("#stop").addEventListener('click',function(){
+            clearInterval(stopMe);
+        })
+    </script>
+</body>
+</html>
