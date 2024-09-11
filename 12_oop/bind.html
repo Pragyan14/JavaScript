@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bind</title>
+</head>
+<body>
+    <div>
+        <button>Click Me</button>
+    </div>
+    <script>
+        class React{
+            constructor() {
+                this.library = "React";
+                this.server = "http://localhost/3000";
+
+                document.querySelector('button').addEventListener('click',this.handleClick.bind(this));
+            }
+            handleClick(){
+                console.log("Button Clicked");
+                console.log(this.server);
+            }
+        }
+        const r1 = new React();
+    </script>
+</body>
+</html>
